@@ -1,0 +1,13 @@
+# coding: utf-8
+
+import numpy as np
+import matplotlib.pylab as plt
+
+t = np.linspace(0, 3*np.pi, 11)
+y = np.sin(t)*np.exp(-t/10.) + 0.4*np.random.normal(scale=0.3,size=11)
+
+#In general, save your data first...
+np.savetxt('dampedosc.dat', list(zip(t,y)))
+
+#... before plotting 
+plt.plot(t, y, 'o')
